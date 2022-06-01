@@ -1,4 +1,4 @@
-console.log("Hello world!")
+console.log("My name is Eric")
 
 // you can make single line comments using two forward slashes
 
