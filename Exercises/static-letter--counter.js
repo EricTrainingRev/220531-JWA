@@ -56,9 +56,7 @@ for(let letter of nameToLoopThrough){
         letter === "y"
     ){
         vowelCount++
-        totalCount++;
-    } else {
-        totalCount++;
     }
+    totalCount++;
 }
 console.log("There are " + vowelCount + " vowels in your name and there are " + totalCount + " letters total!");
