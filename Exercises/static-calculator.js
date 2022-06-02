@@ -6,7 +6,7 @@
 
 numberOne = 10;
 numberTwo = 5;
-operation = "/";
+operation = "";
 
 /*
     now that I have my variables I need to think about how the flow of code is going to work. I know that I want
