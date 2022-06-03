@@ -29,15 +29,22 @@ A Runtime Environment is software that provides the means of executing your code
 7. symbol
 
 ### Variable
-creating variables is a way to easily reference data within your code dynamically. You can redefine variables whenever you want to have them reference new data.
+creating variables is a way to easily reference data within your code dynamically. You can redefine variables whenever you want to have them reference new data. The standard naming convention for JavaScript variables and functions is camelCase. Examples:
+``` JavaScript
+number = 5;
+myNumber = 5; // unique words are seperated via the capitalization of the first letter of the new word
+myNumberFive = 5;
+```
 ```Javascript
-myVariable = 10
+// how to create variables and some of their uses
+
+myVariable = 10 // this assigns the value of 10 to the variable
 
 myVariable + 5 // this is the same as 10 + 5
 
 myVariable - 4 // this is the same as 10 - 4
 
-myVariable = 12
+myVariable = 12 // this assigns the value of 12 to the variable
 
 myVariable + 5 // this is the same as 12 + 5
 
@@ -207,4 +214,49 @@ function createFullName(firstName, lastName){
 personOne = createFullName("Bill","Gates"); // personOne = "Bill Gates"
 personTwo = createFullName("Harry","Potter"); // personTwo = "Harry Potter"
 personThree = createFullName("Ben","Kenobi"); // personThree = "Ben Kenobi"
+```
+### Variable Scopes
+There are two main scopes you will work with in JavaScript: global and block scope. Any variable created inside of curly brackets {} with the key words "let" or "const" are considered part of the block scope, and will only exist for the duration of code that is executed within those curly braces
+```JavaScript
+if(true){
+    let myBlockVariable = "this variable only exists in this block of code";
+    console.log(myBlockVariable);
+}
+// you can't access myBlockVariable out of its block of code
+
+if(true){
+    const myConstantBlockVariable = "this variable can not be assigned a new value";
+    console.log(myConstantBlockVariable);
+}
+// you can't access myConstantBlockVariable out of its block of code
+```
+variables are considered part of the global scope if they are declared without a key word, or if they are declared directly in the file itself (not inside curley brackets or a function) even if the "let" or "const" keywords are used
+```JavaScript
+// even though it has the let keyword it is still a global variable
+let myGlobalVariable = "this is a global variable, since it was not declared inside curley brackets";
+
+if(true){
+    anotherGlobalVariable = "this is also a global variable, even though it was declared in this if block";
+}
+
+console.log(anotherGlobalVariable); // this will work just fine, because the variable is part of the global scope
+```
+There are two other scopes to be aware of: function and lexical. You can make a variable function scope by adding the "var" keyword in front of it. This will "hoist" the variable, causing it to be created at the start of the script executing, but it will not be assigned its value until the line of code where you assign its value is actually reached
+```JavaScript
+console.log(myVariable); // will print undefined to the console
+var myVariable = "this is in function scope";
+console.log(myVariable)// this will print this is in function scope to the console
+```
+The final scope to be aware of is the lexical scope: this scope allows a variable defined within a function to be accessed by another function defined within the first function. You will not encounter this often.
+```JavaScript
+function outterFunction(){
+    let outterVariable = "this is in the lexical scope";
+
+    function innerFunction(){
+        console.log(outterVariable) // this will print this is in the lexical scope to the console when the outter function is called
+    }
+
+    innerFunction();
+}
+outterFunction()
 ```
