@@ -204,7 +204,7 @@ function createFullName(firstName, lastName){
     // make sure to include the return key word
 }
 
-personOne = createFullName("Bill","Gates");
-personTwo = createFullName("Harry","Potter");
-personThree = createFullName("Ben","Kenobi");
+personOne = createFullName("Bill","Gates"); // personOne = "Bill Gates"
+personTwo = createFullName("Harry","Potter"); // personTwo = "Harry Potter"
+personThree = createFullName("Ben","Kenobi"); // personThree = "Ben Kenobi"
 ```
