@@ -162,3 +162,49 @@ for(let character of myString){
     console.log(character); // this will print out each character of the string one by one
 }
 ```
+### Functions
+Functions provide a way of reusing your code without the need to rewrite everything each time you want to use it. You first use the function key word to declare that you are creating a function, give the function a name, declare any parameters, then write the associated code
+```JavaScript
+function myFunctionName(parameterOne, parameterTwo){
+    // code you want to execute will go in here
+}
+```
+then, to actually execute your function you need to call it by referencing the function name and providing arguments for the parameters you declared
+```JavaScript
+function addTwoNumbersTogether(numOne, numTwo){
+    console.log(numOne + numTwo);
+}
+
+addTwoNumbersTogether(10,5); // this will print 15 to the console, since 10 + 5 is 15
+```
+You can also use the return key word if you want to get the results of your function out of the function and into the rest of your code
+```JavaScript
+function createFullName(firstName, lastName){
+    let fullName = firstName + " " + lastName;
+    return fullName;
+}
+
+result = createFullName("Bill","Gates");
+console.log(result); // will print Bill Gates to the console
+```
+You need to be careful with the arguments you provide: mixing and matching data types or accidentally providing the wrong data type can produce weird results
+```JavaScript
+function subtraction(parameterOne, parameterTwo){
+    return parameterOne - parameterTwo;
+}
+
+console.log(subtraction(2,1)) // will print 1
+console.log(subtraction("2","1")); // will print 1 due to implicit type conversoin
+console.log(subtraction("two","one")); // will print NaN(Not a Number) due to JavaScript being unable to coerce these strings into numbers
+```
+Functions provide a quick and easy way of dynamically creating variables
+```JavaScript
+function createFullName(firstName, lastName){
+    return firstName + " " + lastName;
+    // make sure to include the return key word
+}
+
+personOne = createFullName("Bill","Gates");
+personTwo = createFullName("Harry","Potter");
+personThree = createFullName("Ben","Kenobi");
+```
