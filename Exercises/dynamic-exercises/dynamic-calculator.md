@@ -1,10 +1,14 @@
-# Static Calculator
-For this excercise you need to create a static calculator (application runs once, does not take in user input) using the following tools:
+# Dynamic Calculator
+For this excercise you need to create a dynamic calculator (takes in user input, continues working until user input tells it to shut dow) using the following tools:
 - variables
 - if
 - else if
 - else
 - console.log();
+- for
+- while
+- do while
+- prompt-sync
 
 don't forget to make variables, and aim to have your calculator, at a minimum, able to do addition, subtraction, multiplication, and division.
 
