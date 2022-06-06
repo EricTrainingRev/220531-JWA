@@ -90,5 +90,38 @@ console.log(myArray);
 
 /*
     To access the built in function you use the dot operator . after the variable name and then, without any spaces added,
-    you type the name of the function you want to call, and provide it with any necessary arguments
+    you type the name of the function you want to call, and provide it with any necessary arguments.
 */
+
+/*
+    To remove elements from an array you have a few options: there are two functions that can remove elements, and there
+    is the key word delete  
+*/
+
+myArray = ["Position one", "Position two"];
+
+delete myArray[0];
+
+console.log(myArray);
+
+/*
+    delete is a useful option, but notice it just changes the data to be undefined. If you want to actually
+    remove the data, you can use the pop command
+*/
+
+myArray = ["Position one", "Position two"];
+
+myString = myArray.pop();
+
+console.log(myArray);
+console.log(myString);
+/*
+    to remove an element from the front of the array you can use the shift function
+*/
+
+myArray = ["Position one", "Position two"];
+
+myString = myArray.shift()
+
+console.log(myArray);
+console.log(myString);
