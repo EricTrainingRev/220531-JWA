@@ -111,7 +111,7 @@ console.log(myArray);
 
 myArray = ["Position one", "Position two"];
 
-myString = myArray.pop();
+myString = myArray.pop(); // this removes the last element in the array, in this case string "Position two"
 
 console.log(myArray);
 console.log(myString);
@@ -121,7 +121,7 @@ console.log(myString);
 
 myArray = ["Position one", "Position two"];
 
-myString = myArray.shift()
+myString = myArray.shift() // this removes the first element in the array, in this case, string "Position one"
 
 console.log(myArray);
 console.log(myString);
