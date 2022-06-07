@@ -1,9 +1,5 @@
-let myObject = {
-    keyOne:myFunction()
-};
-
-function myFunction(){
-    console.log("Hello world!");
+function addition(numOne, numTwo){
+    console.log(numOne + numTwo);
 }
 
-// myObject.keyOne();
+addition(1,2)
