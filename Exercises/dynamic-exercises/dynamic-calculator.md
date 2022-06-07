@@ -14,22 +14,38 @@ don't forget to make variables, and aim to have your calculator, at a minimum, a
 
 ### Calculator file template
 ```JavaScript
-/*
-    make sure to define your variables
-*/
-
-numOne = 0; // replace this number with the actual number you want
-numTwo = 0; // replace this number with the actual number you want
-operator = ""; // assing the operator as a string
+const prompt = require("prompt-sync")(); // make sure to add second set of open and close parenthesis
 
 /*
-    write your code to make the calculator work after defining your variables
+    make sure to define your variable that controls the loop
 */
 
-if(operator === "+"){
+calculatorOn = true;
+
+/*
+    create your loop and write your calculator code inside of it
+*/
+
+while(calculatorOn){
+
+    let operation = prompt("message to get input goes here");
+    let numOne = prompt("message to get input goes here");
+    let numTwo = prompt("message to get input goes here");
+
+    if(operator === "+"){
     // code to execute
+    }
+    // make use of else if and else to make your calculator capable of handling the other operations
+
+    /*
+        make sure to add some code inside the loop that allows for ending the loop
+    */
+    let continue = prompt("ask user if they want to continue or not");
+    if(continue != "desired input"){
+        calculatorOn = false;
+    }
 }
-// make use of else if and else to make your calculator capable of handling the other operations
+console.log("Thanks for using my calculator App!");
 ```
 
 ### Stretch Goals

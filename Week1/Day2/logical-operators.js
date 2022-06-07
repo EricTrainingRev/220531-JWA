@@ -91,3 +91,10 @@ if(5 < 3){
 if(! 5 < 3){
     console.log("The statement for this block returns a true boolean: 5 is not less than 3");
 }
+
+let valueOne = 4;
+let valueTwo = 5;
+
+if(valueOne != valueTwo){
+    console.log("this is how you check if one value does not equal another")
+}
