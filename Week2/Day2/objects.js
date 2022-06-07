@@ -71,15 +71,39 @@ console.log(myObject[true]);
 */
 
 function myFunction(){
-    console.log("function executed")
+    console.log("function executed");
 }
 
 let myFunctionObject = {
-    keyOne:myFunction(), // here I call the function (actually execute it)
+    keyOne:myFunction(), // here I call the function (actually execute it) the function is actually exectued at this line
     keyTwo:myFunction // here I reference the function (the function is not executed)
 }
 
-myFunctionObject.keyOne;
+myFunctionObject.keyOne; // this is the same as writing the code myFunction(), because keyOne is a reference to myFunction()
 myFunctionObject.keyTwo; // to make the message print to the terminal I would need to add () to this code
 myFunctionObject.keyTwo(); // you can think of keyTwo as the same as myFunction, so to actually exceute the code I need the ()
 
+/*
+    To summarize the craziness above: if you want to store a function inside of your objects make sure to NOT include the (), because if you
+    add them then your runetime environment will execute the function when it assigns it to the key
+*/
+
+// follow this example:
+
+myObject = {
+    keyOne:myFunction // notice no ()
+}
+
+myObject.keyOne() // here I add the () to actually call the function
+
+/*
+    to add a new key/pair, or to reassign the value of a key pair, you follow the same syntax of using the dot operator or the suqare
+    brackets
+*/
+
+myObject = {};
+
+// this will add a key to the object called keyOne, its associated value will be the string below
+myObject.keyOne = "I added this after I created my object";
+
+console.log(myObject);
