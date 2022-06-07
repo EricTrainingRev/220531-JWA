@@ -30,7 +30,10 @@ myArrowFunction();
 /*
     if I wanted to have multiple lines of code for my arrow function then I would need to use {} after the
     arrow sign. Also, if I want to get the result of the function out of it, then I need to use the return key word
-    just like a regular function
+    just like a regular function.
+
+    Keep in mind that arrow functions are not hoisted like regular functions, so you can't call them until
+    after you have defined and initialized them in your code
 */
 
 // notice that I declared two parameters inside the (), and because the function covers multiple lines I used {}
