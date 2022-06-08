@@ -9,6 +9,7 @@
 - If you are going to be late communicate it ahead of time
 - Be back on time from breaks
 - If you are going to be absent communicate it with your trainer
+- Do not leave the zoom call without informing your trainer
 
 # Zoom Etiquette
 - Turn your camera on before you start talking
@@ -28,6 +29,7 @@
 - Be respectful to everyone
 - If you disagree with someone else do so without personally attacking the other person
 - Do not plagiarize other peoples' work
+- Swearing/cussing is not considered work appropriate behavior: please refrain from doing so while in a training setting
 
 # Training Mediums
 You can expect the following training mediums in this course:
