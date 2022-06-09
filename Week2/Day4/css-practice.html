@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Practice</title>
+    <style>
+        /* you can set internal styling in between the style tags inside the head section */
+        p {
+            text-align: center;
+            color:red;
+            border: solid 1px blue;
+            margin-right: 1000px;
+        }
+
+        /* to target an element with a given id, use the # and then the id value */
+        #headerOne {
+            text-align: center;
+        }
+
+        #headerTwo{
+            text-align: right;
+        }
+    </style>
+    <link rel="stylesheet" href="css-external.css"> <!-- this link element allows me to create css in the given file -->
+</head>
+<body>
+    <!-- the header elements with the style attribute below are being given their styling via in-line styling -->
+    <!-- 
+        css styling is applied via key:value pairs. The key is the kind of styling you want, the value is the
+        actual styling option that you choose which is associated with the key. You can set multiple styling 
+        options in-line by seperating them with a ;
+     -->
+    <h1>This is an h1 header with no styling</h1>
+    <h1 style="text-align:center;">This is an h1 header with some css styling</h1>
+    <h1 style="text-align:right;color:green;">this is another h1 header but this time right aligned and colored green</h1>
+
+    <!-- 
+        another way of applying styling to your web page is by using internal css. To do this, you create a style tag inside of 
+        the head section and you assign your styling information there
+    -->
+
+    <p>this is my paragraph element, it has no in-line styling</p>
+    <p>this is my second paragraph element, still no in-line styling</p>
+    <!-- notice that the p element below has in-line styling that overrides the internal styling set above -->
+    <p style="text-align:left;color:purple;border:dotted 5px green">this is my third paragraph element, it does have in-line styling</p>
+
+    <!-- 
+        you don't have to just use the element as your css selector: you can also assign an id and/or a class attribute to your elements 
+        and assign your css by them
+    -->
+
+    <h2 id="headerOne">this h2 has the id of headerOne</h2>
+    <h2 id="headerTwo">this h2 has the id of headerTwo</h2>
+
+    <h3 class="classOne">this h3 has the class of classOne</h3>
+    <h3 class="classTwo">this h3 has the class of classTwo</h3>
+</body>
+</html>
