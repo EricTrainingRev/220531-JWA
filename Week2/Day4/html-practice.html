@@ -8,5 +8,54 @@
     <!-- a common element you will see in web pages is the header element: you can create headers of varying sizes -->
     <h1>This is my HTML Practice web page! I made this using the h1 tags</h1>
     <h6>This is a header I made by using the h6 tags</h6>
+
+    <!-- another common element you will use is the paragraph element. It provides an easy way of adding text to your page -->
+    <p>This text is located inside of a paragraph element</p>
+
+    <!-- there are two ways of organizing data on your page into lists: you can make ordered and unordered lists -->
+    <ul>
+        <!-- the ul tags creates an unordered list. Any content inside is assumed to not need an order -->
+        <li>my first list item</li>
+        <li>my second list item</li>
+        <!-- notice in the li (list item) tags above that the content of the items goes in between the tags -->
+    </ul>
+
+    <ol>
+        <!-- the ol tags creates an ordered list: any content inside is assumed to be entered in an important order -->
+        <li>my first ordered list item</li>
+        <li>my second ordered list item</li>
+    </ol>
+
+    <!-- A very common way of trying to get user input to make something happen on your web page is to include button elements -->
+    <button>click me to make something happen</button>
+
+    <!-- a common use for the button element is to confirm that user input is correct, and this input comes from input elements -->
+    <input type="text">
+
+    <!-- by chaning the value of the type attribute I can change what kind of input the user is providing -->
+    <input type="number">
+
+    <!-- there are many different kinds of values you can provide for the type attribute -->
+    <input type="password">
+
+    <!-- another good element to know how to make off the top of your head is the table element. 
+        These provide a nice way of presenting info on your page -->
+    <table>
+        <!-- to make a table, first you start with the table tags, and then you will have some nested content -->
+        <thead>
+            <!-- this is where you declare the headers for your table -->
+            <tr> <!-- this stands for table row -->
+                <th>Header One</th><!-- this stands for table header -->
+                <th>Header Two</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- this is where you will put the content of the table, organized by the headers set above -->
+            <tr>
+                <td>content one</td> <!-- this stands for table data -->
+                <td>content two</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
