@@ -115,3 +115,40 @@ let myObject = {
 
 myObject.keyOne(); // () are added here when I reference the key, will print Hello world to the console
 ```
+### HTML/CSS
+HTML is used to create web pages: browsers read the content of an HTML file and render the content in the viewport. The different pieces of a web page are called elements, and they are created by using tags in the HTML file. These tags can be organized/adjusted by adding attributes to the tag, such as giving an ID assignment, assigning classes to the element, or adding instructions for what should happen when the element is clicked on.
+
+CSS is what is used to provide styling for web elements. This can affect the positioning, color, alignment, just about any visual aspect of the element. You can assign styling via in-line (within the tag of the elemnt), internal (via a style element in the head section of the html file), or via external css (css in a seperate file linked via a link tag in the head section)
+
+### Selecting Elements via JavaScript
+You can use JavaScript to access and manipulate elements on a web page. Two common means of doing so are by selecting the element by its id attribute, or accessig multiple elements by a shared class name
+```JavaScript
+// accessing via id
+const element = document.getElementById("id goes here as a string");
+
+// accessing via class
+let elements = document.getElementsByClassName("class name goes here as a string")
+```
+using the second option returns an HTMLCollection object that contains references to all the web elements that contain the given class name. This collection can be iterated through, and the elements can be accessed by their index position, but the collection does not have access to the push, pop, and shift methods that a normal Array would have.
+
+### Event Listeners
+Event listeners provide a way of adding dynamic functionality to your web pages. You can tell your web page to "listen" for events to happen, and when they do, perform some action, such as sending information to a web server, pop up an alert for the user, change text color on the page, etc. You can do this by using an onevent attribute directly in your web elements or by using the addEventListener function via JavaScript
+```HTML
+<!-- notice the "this" keyword: it provides an easy reference to the element it is used in -->
+<p onclick="this.style.color='red'">this text will turn red when the element is clicked on</p>
+
+<p id="paragraph">this text will turn yellow when the element is clicked on</p>
+
+<script>
+    // create a reference to the element
+    const paragraph = document.getElementById("paragraph");
+
+    // create a function to execute upon your chosen event
+    function changeTextYellow(){
+        paragraph.style.color = "yellow";
+    }
+
+    // use the addEventListener method to set the event the page is "listening" for and the function to execute when it happens
+    paragraph.addEventListener("click",changeTextYellow);
+</script>
+```
