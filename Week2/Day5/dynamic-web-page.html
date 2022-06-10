@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adding JavaScript</title>
+</head>
+<body>
+    <!-- onclick is a very easy way to add dynamic functionality to your web page -->
+    <h1 onclick="alert('this is my pop up alert')">click me to make an alert pop up!</h1>
+
+    <!-- a quick and easy way to write some JavaScript in your html is to make use of the "this" keyword -->
+    <p onmouseover="this.style.color='red'" onmouseleave="this.style.color='black'">this text will change to red when we move the mouse over it</p>
+
+    <p id="paragraph">this paragraph element is going to be edited by the JavaScript we write in the script section</p>
+
+    <h2 class="headers">this is my first header</h2>
+    <h2 class="headers">this is my second header</h2>
+    <h2 class="headers">this is my third header</h2>
+    <h2 class="headers">this is my fourth header</h2>
+
+</body>
+<script>
+    // you can write JavaScript in between these script tags and it will be applied to your web page
+    console.log("Hello world!");
+
+    // you don't have to use const, but it is reccomended so that you don't accidentally reassign the value
+    const paragraph = document.getElementById("paragraph");
+    console.log(paragraph);
+
+    // to add the color changing functionality to our new element we have to assign event listeners
+    // this is the same as creating the attribute in the element directly, but we are going to use a function
+    // to handle the changing of the style instead of direct JavaScript
+
+    function mouseMovesOver(){
+        paragraph.style.color = "purple";
+    }
+
+    function mouseMovesOff(){
+        paragraph.style.color = "black";
+    }
+
+    // to make the functions above execute at the proper times we need to make use of the addEventListener function
+
+    paragraph.addEventListener("mouseover",mouseMovesOver);
+
+    paragraph.addEventListener("mouseleave",mouseMovesOff);
+
+    /*
+        Sometimes you will want to grab multiple elements and perform some operation on them or search through them
+        for specific information. You can create a reference variable that points to a collection of html elements
+        to do so
+    */
+
+    // this variable will be a HTMLCollection object that holds references to the h2 elements created above
+    // this collection object can be iterated through and the elements can be accessed via their index psoitions
+    let h2Elements = document.getElementsByClassName("headers");
+    console.log(h2Elements);
+
+    // now that I have my collection of elements I can loop through them and apply the styling I want
+    for(let header of h2Elements){
+        header.style.color = "blue";
+    }
+
+</script>
+</html>
