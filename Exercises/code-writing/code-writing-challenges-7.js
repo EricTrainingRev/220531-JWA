@@ -25,8 +25,8 @@ console.log(/* print one value here */);
 console.log(/* print the other value here */);
 
 /*
-    Exercise Four: remove the string element from the array in a way that makes it so only the number element
-    remains in the array. HINT: arrays have built in methods of removing the first and last elements in the array
+    Exercise Four: create a new key/value pair in your object that references the function below. Use this new key
+    to call the function after the console log provided below
 */
 
 function objectFunction(){

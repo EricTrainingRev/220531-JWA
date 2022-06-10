@@ -30,7 +30,7 @@ myArray.pop();
 myArray.shift();
 ```
 ### Template Literals
-Template Literals provide a convinient way of embedding JavaScript expressions (snippets of code) inside of a string. This process is called string interpolation.
+Template Literals provide a convinient way of embedding JavaScript expressions (snippets of code) inside of a string. This process is called interpolation.
 ```JavaScript
  let myTemplateLiteral = `use back-tics to create template literals`;
 
@@ -118,7 +118,7 @@ myObject.keyOne(); // () are added here when I reference the key, will print Hel
 ### HTML/CSS
 HTML is used to create web pages: browsers read the content of an HTML file and render the content in the viewport. The different pieces of a web page are called elements, and they are created by using tags in the HTML file. These tags can be organized/adjusted by adding attributes to the tag, such as giving an ID assignment, assigning classes to the element, or adding instructions for what should happen when the element is clicked on.
 
-CSS is what is used to provide styling for web elements. This can affect the positioning, color, alignment, just about any visual aspect of the element. You can assign styling via in-line (within the tag of the elemnt), internal (via a style element in the head section of the html file), or via external css (css in a seperate file linked via a link tag in the head section)
+CSS is what is used to provide styling for web elements. This can affect the positioning, color, alignment, just about any visual aspect of the element. You can assign styling via in-line (within the tag of the elemnt), internal (via a style element in the head section of the html file), or via external css (css in a seperate file linked via a link tag in the head section). CSS selectors are used to determine what elements are affected on the page, and these can target elements by their name, id, class, and more.
 
 ### Selecting Elements via JavaScript
 You can use JavaScript to access and manipulate elements on a web page. Two common means of doing so are by selecting the element by its id attribute, or accessig multiple elements by a shared class name
@@ -149,6 +149,9 @@ Event listeners provide a way of adding dynamic functionality to your web pages.
     }
 
     // use the addEventListener method to set the event the page is "listening" for and the function to execute when it happens
+    // the function provided to the addEventListener method is called a callback function
     paragraph.addEventListener("click",changeTextYellow);
 </script>
 ```
+### "This" keyword
+"This" refers to the invoking function or object to which it is attached
