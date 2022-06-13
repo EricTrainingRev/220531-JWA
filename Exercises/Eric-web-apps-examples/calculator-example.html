@@ -4,6 +4,82 @@
     <title>Calculator Example</title>
 </head>
 <body>
-    
+    <!-- 
+        now that I have done the prerequisit work I am ready to start development! Making use of the requirements 
+        I set for myself in the previous phase, I will now start writing psuedo-code that I will eventually turn
+        into real code.
+    -->
+
+    <!-- 
+        first things I need to get are numbers from the user, so I need two inputs *
+
+        second I want to add the means of choosing a mathematical operation *
+
+        third I need the button to run my calculations *
+
+        last, I need to display my results
+     -->
+
+     <!-- 
+        Psuedo code to turn into real code:
+
+        input type number id 1 *
+        input type number id 2 *
+
+        select operator (+,-,/,*) *
+
+        button on click doMath() *
+
+        p element that displays result
+      -->
+
+      <input type="number" id="inputOne">
+
+      <select name="operators" id="operators">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>
+      </select>
+
+      <input type="number" id="inputTwo">
+
+
+
+      <button id="button">run calculations</button> <!-- needs an event listener added to it -->
+
+      <p id="result"></p>
+
 </body>
+<script>
+    // will write the code to make the calculator actually work down here
+    /*
+        first we need to create variables to represent our web elements
+    */
+
+   const inputOne = document.getElementById("inputOne");
+   const inputTwo = document.getElementById("inputTwo")
+   const operators = document.getElementById("operators");
+   const button = document.getElementById("button");
+   const result = document.getElementById("result");
+
+   /*
+        Now that my variables are created I am going to define my function that will handle my mathmatical
+        operations
+   */
+
+
+    function calculation(){
+        if(operators.value === "+"){
+            result.textContent = parseInt(inputOne.value) + parseInt(inputTwo.value);
+        }
+    }
+
+    /*
+        After defining the function I need to add an event listener to my button that will make the function 
+        execute when I click the button
+    */
+
+   button.addEventListener("click", calculation);
+</script>
 </html>

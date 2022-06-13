@@ -20,3 +20,9 @@ So now I know that I need my 2 numbers, my operator, and a way of activating my 
 Let's start with the numbers: I need to think of a way of getting these numbers from the user. Before, we either would have hard coded the variables, or we would have gotten the user input from the terminal. For a web based app, we need to design our web page in such a way that the user can easily enter the numbers they want to work with. This can easily be handled by using the input element, which we will designate as having the number type to make sure that users only enter numbers in.
 
 Now, for the operator, we could do the same thing and just use an input element, but there is a slight problem with this. If we choose our operator with the input element we will have to use the text type, but this will allow our users to enter any kind of text they want. Ideally, our users should only be allowed to select from our pre-determined operations (addition, subtraction, division, multiplication). I am probably going to want to choose a different web element to handle this choice. After a quick web search, it looks like the select and option elements can give us an easy way to pre-determine what options a user can pick.
+
+Now to actually run the calculation, I think the easiest way to do this would be to create a button and assign it a function to execute a mathematical operation based upon the number inputs and the chosen operator. I will use an event listener to handle this.
+
+Lastly, to actually display my results, I am going to use a simple paragraph element that will have its text content change to show the result of the mathematical operation that was performed. I will set it up so that the value changes to display only the new result every time an operation is performed
+### The Development Phase
+See calculator-example.html for this phase
