@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Code Writing Challenge 11</title>
+</head>
+<body>
+    <!-- 
+    The challenges in this file are designed to help you become more familiar with how to work with
+    html, css, and JavaScript. For each challenge you will be given instructions for what you need to do to 
+    complete the exercise. Note that all exercises in this file should be handled by writing code in the script
+    section below
+     -->
+
+     <!-- 
+        Exercise One: make the text content of the header element below match the pokemon name retrieved from
+        the getPokemonInfo() function called below
+      -->
+    
+      <h1 id="exerciseOne">Make this text say the name of the pokemon</h1>
+
+     <!-- 
+        Exercise Two: make the unordered list below store the pokemon types retrieved from the getPokemonInfo()
+        function below
+      -->
+
+      <ul id="exerciseTwo">
+        <!-- types should go in here -->
+      </ul>
+
+     <!-- 
+        Exercise Three: add the pokemon images (found in the sprites section) to the div container below from the
+        information retrieved from the getPokemonInfo() function below. Make sure only images with working links are
+        added
+      -->
+
+      <div id="exerciseThree">
+        <!-- images should go in here -->
+      </div>
+
+     <!-- 
+        Exercise Four: adjust the getPokemonInfo() function below so that new informatio will populate the elements
+        above when you you click the button below. Feel free to make use of the input element as well
+      -->
+
+      <input type="number" id="exerciseFourInput">
+      <button id="exerciseFourButton">exercise four button</button>
+
+</body>
+<script>
+    // use this section to complete all the exercises
+    // you can complete the exercises by manipulating the function or writing your code after the function call
+
+    let pokemon;
+    getPokemonInfo();
+    
+    
+    
+    
+
+
+
+
+
+    async function getPokemonInfo(){
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon/151");
+        if(response.status === 200){
+            pokemon = await response.json();
+            console.log(pokemon);
+        } else {
+            alert("it got away!");
+        }
+    }
+</script>
+</html>
