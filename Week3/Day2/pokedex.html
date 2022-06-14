@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Welcome to my Pokedex! Please search for a Pokemon below using the pokemon's id</h1>
-    <input type="number" id="pokeId">
+    <input type="number" id="pokeId" min="1" max="151">
     <button id="searchButton">search for pokemon!</button>
 
     <h1 id="pokeName"><!-- this is where the pokemon name is going to be placed --></h1>
@@ -14,6 +14,8 @@
     <div id="spritesContainer"><!-- this dive will store the pokemon images inside of it --></div>
 
     <ul id="typesList"><!-- this unordered list will store the pokemon types inside of it --></ul>
+
+    <ul id="movesList"><!-- this unordered list will store the pokemon moves inside of it --></ul>
 
 </body>
 <script>
@@ -29,14 +31,24 @@
 
     const pokeHeader = document.getElementById("pokeName"); // this references my header element above
     const spritesContainer = document.getElementById("spritesContainer"); // this references the div above
+    const typesList = document.getElementById("typesList");
+    const movesList = document.getElementById("movesList");
+    const pokeId = document.getElementById("pokeId");
+    const searchButton = document.getElementById("searchButton");
 
     async function getPokemonInfo(){
+
     // the fetch function lets you make http requests via your webpage
-    let httpResponse = await fetch("https://pokeapi.co/api/v2/pokemon/1");
+    let httpResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId.value}`);
     console.log(httpResponse); // if you see, as part of the response object, status:200 then your request was made succesfully
 
     // now that we have access to the response, we need to parse out the JSON from the response
     if(httpResponse.status === 200){
+
+        pokeHeader.textContent = "";
+        spritesContainer.innerHTML = ""; // this will remove any previous images in the container
+        typesList.innerHTML = ""; // this removes any previous types
+        movesList.innerHTML = ""; // this removes any previous moves
 
         // this line below converts the json stored in the response into a JavaScript object
         let responseBody = await httpResponse.json()
@@ -67,13 +79,39 @@
             the index positions of the array are references to objects
             type is the key word to reference the object with the actual type name
             name is the key word that references the actual type we want
+
+            to handle this amount of nested information, we will loop through the array and reference the content
+            we need from the objects we get access to in the array
         */
+
+        for(let object of responseBody.types){
+            // now that we know how to actually access the types we can create list items and store their values in them
+            let li = document.createElement("li");
+            // then we set the text content of the list item
+            li.textContent = object.type.name;
+            // then we append the list item inside of the type unorded list
+            typesList.appendChild(li);
+        }
+
+        /*
+            and finally, we have the moves to work with: the names of the moves are stored in an array,
+            inside of an object, inside of another object. so We need to parse it out
+        */
+
+        for(let object of responseBody.moves){
+            console.log(object.move.name);
+            let li = document.createElement("li");
+            li.textContent = object.move.name;
+            movesList.appendChild(li);
+        }
 
     } else {
         console.log("it got away!");
     }
    }
 
-   getPokemonInfo();
+   searchButton.addEventListener("click",getPokemonInfo); // this ties the pokemon search to our button
+
+   
 </script>
 </html>
