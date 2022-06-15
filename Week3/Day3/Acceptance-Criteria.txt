@@ -1,0 +1,33 @@
+Manager Acceptance Criteria
+
+FEATURE:    Managers should be able to login to access their homepages
+
+    SCENARIO:   As a manager I want to sign in so I can view my custom homepage
+
+        GIVEN   the manager is on the login page
+        WHEN    the manager enters his correct username
+        WHEN    the manager enters his correct password
+        WHEN    the manager clicks the login button
+        THEN    the manager should be logged in to the manager home page
+
+
+_________________________________________________________________________
+
+Tester Acceptance Criteria
+
+FEATURE:    Testers should be able to login to access their homepages
+
+SCENARIO:   As a tester I want to sign in so I can view my custom homepage
+
+GIVEN   the tester is on the login page
+WHEN    the tester enters his correct username
+WHEN    the tester enters his correct password
+WHEN    the tester clicks the login button
+THEN    the tester should be logged in to the tester home page
+
+FEATURE:    Testers should be able to update defects so they can monitor their progress
+
+Scenario: update from pending to accepted
+Scenario: update from pending to rejected
+etc.
+etc.
