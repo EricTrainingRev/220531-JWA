@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alerts and Dialogues</title>
+</head>
+<body>
+    <button onclick="createAlert()">click me for an alert</button>
+    <button onclick="createDialogue()">click me for a confirm prompt</button>
+</body>
+<script>
+    function createAlert(){
+        alert("this is an alert: it is just a message");
+    }
+    function createDialogue(){
+        // this is a handy function to confirm user input
+        let result = confirm("click ok to return a true boolean, cancel to return false");
+        console.log(result);
+    }
+</script>
+</html>

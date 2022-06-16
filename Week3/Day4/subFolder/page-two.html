@@ -6,6 +6,7 @@
 <body>
     <button onclick="transferToPageOne()">click me to go to page one</button>
     <p id="result"></p>
+    <p id="sessionInfo"></p>
 </body>
 <script>
     // to transfer from one local html file to another you can use the window.location.href proper
@@ -17,6 +18,8 @@
 
     const result = document.getElementById("result");
     result.textContent = `The number you set on page one is ${localStorage.getItem("number")}`;
+    const sessionInfo = document.getElementById("sessionInfo");
+    sessionInfo.textContent = `the number you set in session storage on page one is ${sessionStorage.getItem("sessionNum")}`;
     
 </script>
 </html>

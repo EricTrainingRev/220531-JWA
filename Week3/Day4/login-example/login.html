@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <input type="text" placeholder="username">
+    <br>
+    <input type="password" placeholder="password">
+    <br>
+    <button onclick="login()">login</button>
+</body>
+<script>
+    // first I will make three objects that represent the responses of an http request: one for each user that needs their landing page
+    const personOne = {
+        username:"PersonOne",
+        role:"food taster for the king",
+        fullName:"Barnabus the 15th"
+    }
+
+    const personTwo = {
+        username:"PersonTwo",
+        role:"curtain chooser for the king",
+        fullName:"Billy the 3rd"
+    }
+
+    const personThree = {
+        username:"PersonThree",
+        role:"jester for the king",
+        fullName:"Sid the kid from toystory"
+    }
+
+    /*
+        when determing where to send someone after a successfull login, you will want to choose one of the keys provided in the response body that
+        will return a consistent response no matter who is trying to login. In the case above, we will use the role of the individual to determine
+        which login page they will be redirected to, because this provides a consistent metric to work with.
+    */
+</script>
+</html>
