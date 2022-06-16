@@ -4,13 +4,16 @@
     <title>Login</title>
 </head>
 <body>
-    <input type="text" placeholder="username">
+    <input type="text" placeholder="username" id="username">
     <br>
-    <input type="password" placeholder="password">
+    <input type="password" placeholder="password" id="password">
     <br>
     <button onclick="login()">login</button>
 </body>
 <script>
+
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password")
     // first I will make three objects that represent the responses of an http request: one for each user that needs their landing page
     const personOne = {
         username:"PersonOne",
@@ -33,7 +36,42 @@
     /*
         when determing where to send someone after a successfull login, you will want to choose one of the keys provided in the response body that
         will return a consistent response no matter who is trying to login. In the case above, we will use the role of the individual to determine
-        which login page they will be redirected to, because this provides a consistent metric to work with.
+        which login page they will be redirected to, because this provides a consistent metric to work with. For this example all the individuals
+        will use the same password: password.
     */
+
+   function login(){
+        // to make this example work I first need to simulate making the http request to actually perform the login
+        // please note the actual code you will write for this will look different
+        
+        // first thing to do is get the login info
+        let username = usernameInput.value;
+        let password = passwordInput.value;
+        let responseBody;
+        // the checks I am about to make would typically be handled by the API you interact with
+        if(username === "personOne" && password === "password"){
+            responseBody = personOne;
+        } else if( username === "personTwo" && password === "password"){
+            responseBody = personTwo;
+        } else if( username === "personThree" && password === "password"){
+            responseBody = personThree;
+        } else {
+            alert("login failed: please try again")
+        }
+
+        // we can assume we wrote our code to check the status code and we got a 200
+        // we can now use the role of the response we got to determine what page to be sent to
+        if(responseBody.role === "food taster for the king"){
+            window.location.href = "landing-one.html";
+        } else if (responseBody.role === "curtain chooser for the king"){
+            window.location.href = "landing-two.html";
+        } else if (responseBody.role === "jester for the king"){
+            window.location.href = "landing-three.html";
+        } else {
+            // this is my catch-all block in case something goes wrong that I didn't anticipate
+            alert("something went wrong: please try again");
+        }
+
+   }
 </script>
 </html>
