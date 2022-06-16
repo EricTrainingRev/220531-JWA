@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>page one</title>
+</head>
+<body>
+    <button onclick="transferToPageTwo()">click me to go to page two</button>
+    <label for="number">please enter a number</label>
+    <input type="number" id="number">
+</body>
+<script>
+    // to transfer from one local html file to another you can use the window.location.href property
+    const input = document.getElementById("number");
+
+
+
+    function transferToPageTwo(){
+        localStorage.setItem("number",input.value)
+        window.location.href = "subFolder\\page-two.html";
+    }
+
+    // sometimes you will need to take information you acquired on one page and transfer it to another. A handy
+    // but very unsecure way of handling this is local/sessions storage
+
+    
+
+    
+</script>
+</html>

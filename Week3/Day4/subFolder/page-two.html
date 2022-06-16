@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>page two</title>
+</head>
+<body>
+    <button onclick="transferToPageOne()">click me to go to page one</button>
+    <p id="result"></p>
+</body>
+<script>
+    // to transfer from one local html file to another you can use the window.location.href proper
+    function transferToPageOne(){
+        // if the html file you want to go to is in a directory "above" the one that holds your current page
+        // then you need to use .. to indicate you are moving up a directory level
+        window.location.href = "..\\page-one.html";
+    }
+
+    const result = document.getElementById("result");
+    result.textContent = `The number you set on page one is ${localStorage.getItem("number")}`;
+    
+</script>
+</html>
