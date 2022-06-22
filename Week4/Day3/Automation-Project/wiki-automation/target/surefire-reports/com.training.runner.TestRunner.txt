@@ -1,0 +1,29 @@
+-------------------------------------------------------------------------------
+Test set: com.training.runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.053 s <<< FAILURE! - in com.training.runner.TestRunner
+as a English reader I want to view content in English so I can become more knowledegable(Users should be able to view content in their own language)  Time elapsed: 0.193 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step "The user is on the Wikipedia homepage" is undefined. You can implement it using the snippet(s) below:
+
+@Given("The user is on the Wikipedia homepage")
+public void the_user_is_on_the_Wikipedia_homepage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Some other steps were also undefined:
+
+@When("The user clicks on the English link")
+public void the_user_clicks_on_the_English_link() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("The user should view content in English")
+public void the_user_should_view_content_in_English() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
