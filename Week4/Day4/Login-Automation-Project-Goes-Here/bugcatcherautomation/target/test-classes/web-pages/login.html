@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login</title>
+</head>
+<body>
+    <h1>this page is an example of how to actually make a basic login</h1>
+    <input type="text" id="username">
+    <input type="password" id="password">
+    <button onclick="login()">login</button>
+</body>
+<script>
+    async function login(){
+        // to let my api validate login information I need to attach the username and password to the http request
+        let loginInfo = {
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value
+        }
+
+        // now that I have the login information I need to convert it into a JSON
+        let loginJSON = JSON.stringify(loginInfo);
+
+        // now I can set up my HTTP request configurations
+        let config = {
+            method:"PATCH", // method is a reference to the kind of request you are making (the verb): GET is the default
+            headers:{'Content-Type':"application/json"}, // some APIs will return an error message without this value included
+            body: loginJSON
+        }
+
+        let httpResponse = await fetch("https://bugcatcher.coe.revaturelabs.com/0/login",config); // make sure to enter the url assigned to you
+
+        if(httpResponse.status === 200){ // 200 basically means request made successfully
+            let responseBody = await httpResponse.json(); // remember, json() returns a promise, so we use await to get the data we want out of it
+
+            if(responseBody.role === "Tester"){
+                window.location.href = "tester-page.html"
+            } else {
+                window.location.href = "manager-page.html";
+            }
+        } else {
+            let responseBody = await httpResponse.json(); // remember, json() returns a promise, so we use await to get the data we want out of it
+            alert(responseBody.detail);
+        }
+
+    }
+</script>
+</html>
