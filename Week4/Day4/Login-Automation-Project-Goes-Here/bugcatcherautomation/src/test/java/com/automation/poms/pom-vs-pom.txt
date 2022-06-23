@@ -1,0 +1,5 @@
+Remember:
+
+pom.xml is the project object model that maven uses to create/test our application
+
+poms are page object models that are Java representations of the web pages we are going to interact with
