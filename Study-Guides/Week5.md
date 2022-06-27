@@ -1,0 +1,9 @@
+# Testing Fundamentals
+### Why Testing?
+Software testing is a neccessary part of any software development: you have to verify that your code does what you want it to do. This is where testing comes in: testing is the process of checking whethere your code does what it is supposed to or not. Historically this has been handled by manual testers: someone would boot up the software and manually try all the different features of the application, reporting whether they worked as intended or not. Sometimes this practice is still used, especially when the use-case of the software is more subjective (think videogames: oftentimes you need manual testers to thoroughly check the systems of the game). In most cases though, the software will have specificly intended outcomes that ought to be consistent (a calculator should always return 5 when 2 is added to 3). In these consistent cases, manual testing has made way for automation testing.
+
+### Automation Testing
+Automation testing is the practice of writing code that automatically handles the testing of software for you. So, instead of needing to pay someone to interact with your software, you simply write some code to test it for you. For a small application it may seem like a lot of work for little payoff, but the benefits writing automation tests for applications scales exponentially the larger the application is (and therefore, the more code there is that needs testing). This is where automation testing shines: software can test and confirm our code is working properly (or confirm that it isn't) exponentially faster than a human can, no matter how good they are. 
+
+### Testing Pyramid
+The testing pyramid is a way of understanding what basic kinds of tests should be created, and how numerous they should be. 
