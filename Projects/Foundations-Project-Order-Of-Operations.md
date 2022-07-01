@@ -10,3 +10,6 @@
     - if everything works you may be asked about a challenge of the project
     - if you implemented stretch goals you may be asked why you chose the particular stretch goals you worked on
     - etc.
+
+### Time Limit
+5 minutes MAXIMUM. You will be stopped if you go over time.
