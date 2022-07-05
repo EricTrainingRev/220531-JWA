@@ -65,3 +65,35 @@
 - DBeaver is not a database itself, it is just an application that we use to interact with a database that we already have set up
 - This is why we still need to create a database on RDS before we use DBeaver
 - [Install Link](https://dbeaver.io/download/)
+
+## SQL
+- case-insensitive, so we use snake case, or _ between words
+- data types: varchar(n), integer, serial, boolean, date, time, timestamp
+- char contains extra padding, therefore takes up more space, varchar does not have the padding so more memory efficient
+- example: varchar(50) but you only store the word 'cat', this would only take up 3 letters
+- char(50) but only store the word 'cat', it would take up the full 50 because the extra 47 letters would be strored as blank spaces
+
+## Definitions
+- database - collection of data. In the case of SQL, a database is a collection of related tables
+    - example, if we had a pet store database, the tables could be pets, customers, items
+- relational database - tables in the database are related in some way
+    - example, a customer could own a pet, or posess many items
+- table - represents an object/entity, comprised of rows and columns
+- columns - represents a field, has some data type, and some constraints
+    - example, a column could be name indicating that the values in that column represent a name
+- row - represents a specific record in the table
+    - example, a record would give all the relevent information for an entity (Ashes, cat, grey fur, 10 years old)
+
+
+## SQL Sub-languages
+- Not to be confused with dialects (ex: postgres, mysql, etc.)
+1. Data Definition Language (DDL) - all about defining our tables rather than the individual data
+    - create tables - creating the columns, constraints, primary/foreign keys, creating the structure of the table, not inserting any data, can only create table once, unless we drop it again
+    - drop tables - getting rid of the entire table
+    - truncate tables - get rid of the data in the table but the table will still be there (meaning the structure will still be there)
+    - alter tables - lets you do similar specifications as in create table, but to an already existing table
+        - example, renaming a column, adding a column
+2. 
+3. 
+4. 
+5. 
