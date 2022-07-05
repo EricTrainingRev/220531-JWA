@@ -1,0 +1,1 @@
+Check out this [link](https://www.w3schools.com/sql/exercise.asp) for SQL exercises. As of 7/5, we've only covered insert, update, and delete. You can select those on the sidebar. We will cover more clauses soon!
