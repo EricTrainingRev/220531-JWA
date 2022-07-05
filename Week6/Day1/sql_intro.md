@@ -72,6 +72,8 @@
 - char contains extra padding, therefore takes up more space, varchar does not have the padding so more memory efficient
 - example: varchar(50) but you only store the word 'cat', this would only take up 3 letters
 - char(50) but only store the word 'cat', it would take up the full 50 because the extra 47 letters would be strored as blank spaces
+- All strings should be single quotes
+- serial is an integer but it has special capabilities to help us uniquely identify our records
 
 ## Definitions
 - database - collection of data. In the case of SQL, a database is a collection of related tables
@@ -93,7 +95,29 @@
     - truncate tables - get rid of the data in the table but the table will still be there (meaning the structure will still be there)
     - alter tables - lets you do similar specifications as in create table, but to an already existing table
         - example, renaming a column, adding a column
-2. 
-3. 
+2. Data Manipulation Language (DML) - all about inserting, updating, deleting the data within our table:
+    - insert - inserts data into a table
+    - update - update data that already exists in the table
+    - delete - permanently delete records from the table
+3. Data Query Language (DQL) - used to query for or view the data in our table
 4. 
 5. 
+
+## Primary Keys
+- let's say we have 2 pets with the same name
+- How do we differentiate between them? (ex: update/delete) We don't want the same actions to happen to both of them
+- We need a way to universally distinguish between pets regardless of any of the other fields (name, age, species)
+- This is where primary keys come in
+- Primary keys
+    - uniquely identify a record/row in a table
+    - have to be unique, no two primary keys can repeat
+    - can't be null, they have to have some value
+
+
+## if exists vs. if not exists
+- when we check "if exists" before we drop, we want to make sure we're dropping something
+- If we drop a table, picture it like we're setting a box on fire (getting rid of it)
+    - However, we don't want to set a fire if there's nothing to burn so the "if exists" checks to make sure that there is a box (or table) to burn
+- when we check "if not exists" before we create a table, we want to make sure we're not creating any duplicates
+-  if we already have a box labelled "pets", we don't want to create another box named "pets" because that would confused, it would be redundant
+    - so, by checking to make sure it doesn't exist, we ensure that no redundant boxes are created
