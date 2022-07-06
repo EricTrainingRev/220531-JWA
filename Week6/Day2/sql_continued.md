@@ -37,6 +37,13 @@
 3. right outer join-> return matches in both tables as well as the second (right) table
 4. full outer join -> return matches including everything
 
+![Venn Diagram](https://docs.trifacta.com/download/attachments/160412683/JoinVennDiagram.png?version=1&modificationDate=1596167437085&api=v2)
+
+## Transactions
+- transaction a series of commands (could be inserts, updates, deletes, queries)
+- we're going to learn about some rules that ensure that the transactions don't "mess with" the database
+- ACID acronym helps us remember these rules
+
 ## SQL
 - default lets SQL take care of the incrementing id for us, stores in a sequence
 - example: insert values(default) will insert the next number

@@ -16,6 +16,7 @@ select * from pet;
 
 -- Rory owns Ashes
 insert into pet values (default, 'Ashes', 'cat', 'grey', 11, 4, 'Maine Coone', 1);
+insert into pet values (default, 'Shadow', 'cat', 'grey', 11, 4, 'Maine Coone', 1);
 
 -- James owns Scooby
 insert into pet values (default, 'Scooby Doo', 'dog', 'brown', 11, 4, 'Great Dane', 2);
@@ -23,8 +24,21 @@ insert into pet values (default, 'Scooby Doo', 'dog', 'brown', 11, 4, 'Great Dan
 -- let's say no one owns Goolosh
 insert into pet values (default, 'Goolosh', 'aardvark', 'grey', 5, 4, 'NA', null);
 
-
-
+-- inner join:
+-- specify which tables to join
+-- specify which condition to join them on
+-- inner join only takes matches where there are valid values in both tables
+-- we're only taking pet/owner pairs for which there is a valid pet and a valid owner
+select * from pet inner join person on pet.owner_id = person.id;
+-- left join, so we get Goolosh, because there are valid left values even though there are no right values (no person that owns Goolosh)
+-- we're going to take every pet regardless of whether they have an owner
+select * from pet left join person on pet.owner_id = person.id;
+-- right join, we're going to take every person regardles of whether they have a pet
+select * from pet right join person on pet.owner_id = person.id;
+-- full outer join:
+-- we're taking everything, we're going to have a lot of null values
+select * from pet full outer join person on pet.owner_id = person.id;
+-- pet left join person is the same as person right join pet, the only difference would be the order of the columns in the resulting table
 
 
 select * from person;
