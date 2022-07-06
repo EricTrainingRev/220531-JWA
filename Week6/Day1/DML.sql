@@ -5,6 +5,8 @@ truncate pet;
 
 select * from pet;
 
+--insert into pet (id, pet_name, species, color, pet_age, legs, breed) values (default, 'new pet', 'new species', 'grey', 1,1,'new breed');
+
 -- insert a new pet:
 -- the "default" keyword automatically counts our ids for us:
 insert into pet values (default, 'Ashes', 'cat', 'grey', 10, 4, 'Maine Coone');

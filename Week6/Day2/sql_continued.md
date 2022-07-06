@@ -40,9 +40,39 @@
 ![Venn Diagram](https://docs.trifacta.com/download/attachments/160412683/JoinVennDiagram.png?version=1&modificationDate=1596167437085&api=v2)
 
 ## Transactions
-- transaction a series of commands (could be inserts, updates, deletes, queries)
+- transaction a series of commands (could be inserts, updates, deletes, sometimes queries but mostly DML)
 - we're going to learn about some rules that ensure that the transactions don't "mess with" the database
 - ACID acronym helps us remember these rules
+- Atomic - think of the smallest piece of matter, can't be broken up. In the same way, transactions should be atomic meaning that either everything in a transaction happens or nothing does. In other words we can't break up a transaction. 
+Example: transferring money from one account to another. This would involve subtracting 100 dollars from one account and adding 100 dollars to another account. We wouldn't want only one of those commands to happen because either the 100 dollars would dissappear completely or we would have a 100 dollars that appeared out of nowhere.
+- Consistent - the data in the database should remain consistent and logical before and after the transaction. An example could be if we have a primary key set up (unique and non-null). We would want to ensure that the primary key stays valid before and after the transaction, ensuring that each record has a unique-non-null value for the primary key field. Nothing in the transaction should make the primary key null or non-unique. Consistency isn't just about primary keys, it ensures that all of the rules we have set up with the table stay consistent and logical before and after the transaction.
+- Isolation - deals with 2 or more transactions. If 2 transactions are executed, one transaction should not affect the other. Imagine you're paying someone 20 dollars and also getting 30 dollars from someone else. These are 2 completely different transactions so they should NOT affect each other. The 2 transactions are isolated from each other. 
+- Durable - if some sort of failure occurs, (crashes, power outages, natural disasters), make sure that the committed data is stored. Imagine if the power went out at a data center. You want to make sure that the data is still there when the power goes back on.
+
+## Multiplicity Relationships
+- Reminder, what makes a database a relational database?
+- In our databases we have multiple tables that relate to each other
+- example: pets have an owner column that "relates to" the person column
+### One to One Relationship
+- 1 entity that maps to 1 and only 1 entity
+- At a school, each student has a specific schedule with their classes, times, materials required, etc.
+- Each student only has one schedule. Even if student has multiple classes, still one schedule. 
+- Each schedule belongs to one student. 
+### One to Many Relationship
+- 1 entity that has many entities related to it
+- One owner can have many pets whereas one pet can only belong to a single owner
+### Many to Many Relationship
+- Many entities mapped to many other entities
+- A schedule could have multiple classes
+- A class can be in multiple schedules
+
+### Example (many to one, one to one):
+![Example of Multiplictity Relationships in an e-commerce example](https://i.stack.imgur.com/ThOGR.png)
+
+## SQL Views
+- A View is virtual table that we create using the results of some sort of select query
+- we can create, modify, or drop views
+- we can select from views as if it was a real table
 
 ## SQL
 - default lets SQL take care of the incrementing id for us, stores in a sequence
