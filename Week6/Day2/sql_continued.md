@@ -20,7 +20,22 @@
 4. Data Control Language (DCL) - used to manage access to a database:
     - grant -> gives permissions to a user
     - revoke -> takes permissions away
+    - Copy/paste connection on Dbeaver, give it a new name
+    - edit the credentials to match the new user
+    - make sure the new connection is selected when executing scripts
 5. 
+
+## Joins
+- take 2 or more tables and combine the data together
+- we need to introduce an person table where an person can own 1 or more pets
+- a pet can't belong to one or more owner right
+- not every pet is owned
+- not every person has a pet
+- Different types of joins:
+1. inner join -> return matches that exist in both tables
+2. left outer join -> return matches in both tables as well as the first (left) table
+3. right outer join-> return matches in both tables as well as the second (right) table
+4. full outer join -> return matches including everything
 
 ## SQL
 - default lets SQL take care of the incrementing id for us, stores in a sequence

@@ -4,11 +4,13 @@ create table accounts (id serial primary key, balance integer);
 
 -- say there's an intern at the bank, and they shouldn't have access to everything:
 create user intern;
+-- set up a password so we can log in:
+alter user intern with password 'password';
 
 -- we can grant certain permissions (select, update, insert, delete) for a user on a table
 -- allow the intern to select (read data) from the accounts)
 grant select on accounts to intern;
-
+-- we don't want the intern to manipulate the data:
 revoke delete, update, insert on accounts from intern;
 
 -- insert some dummy data to test this:
