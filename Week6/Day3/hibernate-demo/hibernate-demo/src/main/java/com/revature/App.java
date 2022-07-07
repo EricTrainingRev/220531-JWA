@@ -17,7 +17,7 @@ public class App
     {
         // create a pet object
         Pet pet = new Pet("Ashes from hibernate", "Cat", "grey", 10, 4, "Maine Coone");
-        
+        Pet pet2 = new Pet("Shadow", "Dog", "Grey", 10, 4, "golden retriever");
         // Now that we have a java object set up/created, the cool thing about hibernate
         // is that we can insert into the database
 
@@ -35,8 +35,11 @@ public class App
         // start a transaction, which is a series of SQL commands or operations (insert, update, etc.)
         Transaction transaction = session.beginTransaction();
 
+        
+
         // save the pet (this is the same as inserting in this case)
         session.save(pet);
+        session.save(pet2);
 
         // commit the transaction
         transaction.commit();
