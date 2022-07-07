@@ -5,9 +5,12 @@ package com.revature.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 // this annotation indicates that this Pet class is going to be an entity (table) in our database
 @Entity
+// we can change the name:
+// @Table(name = "newname")
 // this pet class is going to be mapped to a table in our database:
 public class Pet {
 

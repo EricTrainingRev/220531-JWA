@@ -52,3 +52,8 @@
     <version>42.4.0</version>
 </dependency>
 ```
+
+## DAO (Data Access Object)
+- a class that is soley responsible for interacting with a database
+- It's methods relate to CRUD (Create, Read, Update Delete)
+- separation of responsibilities. We set up the CRUD methods in our DAO and we can just call them from anywhere else in our application
