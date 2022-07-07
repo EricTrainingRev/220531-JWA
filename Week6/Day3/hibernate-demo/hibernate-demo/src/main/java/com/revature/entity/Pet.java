@@ -29,10 +29,13 @@ public class Pet {
         this.breed = breed;
     }
 
+    // int says that we're returning an integer
     public int getId() {
         return this.id;
     }
 
+    // void means we don't return anything
+    // because we're just setting the id, we don't need to return any information/value
     public void setId(int id) {
         this.id = id;
     }
@@ -85,6 +88,9 @@ public class Pet {
         this.breed = breed;
     }
 
+
+    // this method just takes all of our attributes and prints them out
+    // if we didn't have this method, we would print out the memory address, which is not very helpful
     public String toString() {
         return "Pet{" +
                 "id=" + id +

@@ -13,6 +13,6 @@ public class App
         System.out.println( "Hello World!" );
 
         Pet pet = new Pet(1, "Ashes", "Cat", "grey", 10, 4, "Maine Coone");
-        System.out.println(pet.toString());
+        System.out.println(pet);
     }
 }
