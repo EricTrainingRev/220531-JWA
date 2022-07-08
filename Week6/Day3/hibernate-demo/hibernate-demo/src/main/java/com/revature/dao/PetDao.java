@@ -25,7 +25,7 @@ public class PetDao {
          // connect configuration to the file:
          cfg.configure("hibernate.cfg.xml");
  
-         // a factory that creates sessions
+         // a factory that creates sessions (this line creates the table in the database)
          SessionFactory factory = cfg.buildSessionFactory();
 
          // return the factory to be used in other methods
