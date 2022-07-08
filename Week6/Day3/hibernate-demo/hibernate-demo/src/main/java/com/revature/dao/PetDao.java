@@ -52,7 +52,7 @@ public class PetDao {
             session.close();
     }
 
-    // let's make an insert method
+    // let's make an insert method (create)
     public void insert(Pet pet) {
         beginTransaction();
          // save the pet (this is the same as inserting in this case)
@@ -60,6 +60,7 @@ public class PetDao {
          endTransaction();
     }
     
+    // (Read)
     // given an id for a pet, return the correspondibg pet record/object
     public Pet getById(int id) {
         beginTransaction();
@@ -68,6 +69,7 @@ public class PetDao {
         return pet;
     }
 
+    // (Read)
     // a list store can store many pets:
     public List<Pet> getAllPets() {
         beginTransaction();
@@ -93,6 +95,9 @@ public class PetDao {
         session.save(petDB);
         endTransaction();
         return petDB;
+
+        // TODO: make use of the session.update to make this method 
+        // more concise
     }
 
     public void deletePet(int id){
