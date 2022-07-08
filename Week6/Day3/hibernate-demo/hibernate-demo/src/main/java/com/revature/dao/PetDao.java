@@ -11,12 +11,13 @@ import org.hibernate.Transaction;
 // its methods will directly relate to CRUD/databases
 public class PetDao {
 
-    // TODO: There's a lot of boiler plate set up code that we have to do for this method. A future step could be 
-    // putting all that repetive logic in its own method so we don't have to keep writing it out
+    // set up some member variables so we can use them in our methods
+    private Session session;
+    private Transaction transaction;
 
-    // let's make an insert method
-    public void insert(Pet pet) {
-        // here we'll do the database logic:
+    // setting up the session factory:
+    // static keyword means this method belongs to the class, rather than the instance
+    private static SessionFactory getSessionFactory() {
          // first, we create a configuration based on hibernate.cfg.xml:
          Configuration cfg = new Configuration();
          // connect configuration to the file:
@@ -24,21 +25,43 @@ public class PetDao {
  
          // a factory that creates sessions
          SessionFactory factory = cfg.buildSessionFactory();
- 
-         // start a session
-         Session session = factory.openSession();
- 
-         // start a transaction, which is a series of SQL commands or operations (insert, update, etc.)
-         Transaction transaction = session.beginTransaction();
- 
+
+         // return the factory to be used in other methods
+         return factory;
+    }
+
+    // we want to use the factory to create a session and then begin a transaction
+    // We're going to be reusing this code so much, it's worth it to make a method so we can just call it whenever
+    // we want to do a database operation
+    private void beginTransaction() {
+        // first, we create a session:
+        // we're getting our factory from the method that we made right above
+        // and then creating a session using that factory:
+        // TODO: We're creating a session every time, so this could be memory inefficient, so we could modify this code
+        // to use less memory by reusing the same session:
+        this.session = PetDao.getSessionFactory().openSession();
+        this.transaction = session.beginTransaction();
+    
+    }
+
+    // whenever we end a transaction, we want to commit and close the session
+    private void endTransaction() {
+            transaction.commit();
+            session.close();
+    }
+
+    // let's make an insert method
+    public void insert(Pet pet) {
+        beginTransaction();
          // save the pet (this is the same as inserting in this case)
          session.save(pet);
- 
-         // commit the transaction
-         transaction.commit();
- 
-         // close out the session:
-         session.close();
+         endTransaction();
     }
     
+    public Pet getById(int id) {
+        beginTransaction();
+        Pet pet = session.get(Pet.class, id);
+        endTransaction();
+        return pet;
+    }
 }

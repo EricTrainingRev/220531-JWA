@@ -28,6 +28,7 @@ public class App
         petDao.insert(pet);
         petDao.insert(pet2);
 
+    
         
 
         // // first, we create a configuration based on hibernate.cfg.xml:
