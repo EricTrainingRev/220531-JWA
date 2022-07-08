@@ -42,6 +42,8 @@ public class App
         // update pet with id 15 using this new information:
         petDao.updatePet(15, new Pet("new name", "new species", "new color", 5, 11, "new breed"));
         
+        // delete pet with id 16:
+        petDao.deletePet(16);
 
         // // first, we create a configuration based on hibernate.cfg.xml:
         // Configuration cfg = new Configuration();

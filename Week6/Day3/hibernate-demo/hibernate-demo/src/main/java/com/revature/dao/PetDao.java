@@ -94,4 +94,13 @@ public class PetDao {
         endTransaction();
         return petDB;
     }
+
+    public void deletePet(int id){
+        beginTransaction();
+        // first we find the pet that we want to delete:
+        Pet petToDelete = session.get(Pet.class, id);
+        // and then we delete it:
+        session.delete(petToDelete);
+        endTransaction();
+    }   
 }
