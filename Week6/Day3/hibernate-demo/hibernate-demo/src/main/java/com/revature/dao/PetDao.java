@@ -7,6 +7,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 // Since this class represents a DAO, or a data access object,
 // its methods will directly relate to CRUD/databases
 public class PetDao {
@@ -58,10 +60,38 @@ public class PetDao {
          endTransaction();
     }
     
+    // given an id for a pet, return the correspondibg pet record/object
     public Pet getById(int id) {
         beginTransaction();
         Pet pet = session.get(Pet.class, id);
         endTransaction();
         return pet;
+    }
+
+    // a list store can store many pets:
+    public List<Pet> getAllPets() {
+        beginTransaction();
+        //                                                                              SQL query:                       // specify we want pet objects     // we want a list of pet objects
+        List<Pet> pets = session.createQuery("SELECT p from Pet p", Pet.class).getResultList();
+        endTransaction();
+        return pets;
+    }
+    
+    // update pet set name = 'new name' where id = 3;
+    public Pet updatePet(int id, Pet newPet){
+        beginTransaction();
+        // get the pet that we want to update from the database:
+        Pet petDB = session.get(Pet.class, id);
+        // we go through each field and update them (don't change id)
+        petDB.setName(newPet.getName());
+        petDB.setSpecies(newPet.getSpecies());
+        petDB.setAge(newPet.getAge());
+        petDB.setBreed(newPet.getBreed());
+        petDB.setColor(newPet.getColor());
+        petDB.setLegs(newPet.getLegs());
+        // persist these changes:
+        session.save(petDB);
+        endTransaction();
+        return petDB;
     }
 }

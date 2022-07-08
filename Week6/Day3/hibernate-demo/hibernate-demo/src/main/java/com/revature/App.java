@@ -28,7 +28,19 @@ public class App
         petDao.insert(pet);
         petDao.insert(pet2);
 
-    
+
+        // store the return value from the database:
+        // we need a default pet constructor for this to work
+        // because the way hibernate gets values is it makes an empty object first and 
+        // then uses setters to fill out those values:
+        Pet pet3 = petDao.getById(15);
+        System.out.println("This is the pet we received: " + pet3.toString());
+
+        // get all pets from tables
+        System.out.println(petDao.getAllPets());
+
+        // update pet with id 15 using this new information:
+        petDao.updatePet(15, new Pet("new name", "new species", "new color", 5, 11, "new breed"));
         
 
         // // first, we create a configuration based on hibernate.cfg.xml:
@@ -54,6 +66,9 @@ public class App
 
         // // close out the session:
         // session.close();
+        
+
+        // TODO Test out where the table is created
 
 
 

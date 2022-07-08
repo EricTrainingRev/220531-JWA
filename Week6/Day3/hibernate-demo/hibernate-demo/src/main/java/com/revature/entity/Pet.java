@@ -30,7 +30,8 @@ public class Pet {
 
     // default constructor, takes in no paramaters and doesn't do anything
     public Pet () {
-
+        // this will create an empty object
+        // hibernate uses this constructor along with the setters to return values
     }
 
     // make a constructor that takes in everything but the id
