@@ -1,0 +1,4 @@
+# Git Branching Practice
+You are going to make a very basic web application with your P2 team: each team member is going to make a very basic home page for themself: your name needs to be present, a fun fact or two should be present, and that's about it.
+
+There is a catch, though: all of your web pages must have some way of tranfering the user to another web page of someone on your team. The link to get to the other people's pages must be created by the person whose page you are going to. You could set it up to transfer to your web page by clicking a button, or by clicking a hyperlink, clicking on a picture, etc. 
