@@ -1,0 +1,17 @@
+Some topics and questions to know for this week:
+- Know the sub-languages of SQL and what commands fall under each category (DDL, DML, DQL, DCL, TCL)
+- Explain the clauses used with select statements (FROM, WHERE, LIMIT, ORDER BY, GROUP BY, HAVING)
+- Understand what AWS is and how to set up an RDS
+- Describe and tell the difference between the different types of joins (inner, left outer, right outer, full outer)
+- Describe the different types of multiplicity relationships (one-to-one, one-to-many, many-to-many)
+- Understand the ACID properties of transaction
+- Be able to create a view in an SQL database
+- Explain Hibernate and JPA and what they are used for
+- Explain the hibernate.cfg.xml file and what kind of information is in it
+- List and explain the annotations used with Hibernate
+- Describe the states of an object in a Hibernate application
+- Define and explain object-relational mapping
+- Explain what a DAO is
+- Explain and list examples of an aggregate function
+- Explain and list examples of a scalar function
+- Explain state vs behavior testing. This [link](https://coderstower.com/2019/09/24/unit-testing-behavior-vs-state/) might help
