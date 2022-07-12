@@ -109,6 +109,8 @@ E2E testing is all encompasing: it takes the entirety of your application and va
             - can be used to track bugs and blockers
             - can be used to see where a team member might need help so a team lead can send someone who finishes their work early to help the struggling team member
             - etc.
+            
+![requirements traceability matrix](requirement_traceability_matrix_example.png)          
 
 ### Quality Aurrance vs Quality Control
 These two topics both drive towards the same goal: a high level of functionality, efficiency, and good structure in an application. The difference between the two is that Assurance is a mindset that must be determined before the project is started, and Control is a reactive process that refines the application
