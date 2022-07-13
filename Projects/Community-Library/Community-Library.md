@@ -3,6 +3,7 @@ The community library is a place where anyone can take/give books on the web, mu
 
 ### Sprint Backlog
 |As a|I want|so that|
+|----|------|-------|
 |user|to take a book|I can read|
 |user|to edit a book|I can fix a mistake in it|
 |user|to give a book|I can give back to the community|
