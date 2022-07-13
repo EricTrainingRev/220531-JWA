@@ -1,6 +1,7 @@
 package com.automation.runner;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -28,6 +29,8 @@ public class TestRunner {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
         login = new Login(driver);
+        // implicit waits are a handy way of telling a driver to wait up to the given time for an element to be interactable
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         // the WebDriverWait is used to tell Selenium to wait up to a set amount of time for a given condition
         wait = new WebDriverWait(driver, 2);
     }
