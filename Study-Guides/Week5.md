@@ -83,6 +83,12 @@ E2E testing is all encompasing: it takes the entirety of your application and va
     - Testing done to ensure that new features/additions to the code don't break 
 - Retesting
     - Testing done after an initial test failed and refactoring is complete
+- State Testing
+    - Testing done to ensure that the content of the database you are using actually changes as intended
+        - think testing Data Access Objects: does my create method ACTUALLY create something in the database?
+- Behavior Testing
+    - Testing done to ensure that the logic of your code actual works as intended
+        - think testing Service Objects: does my validation method ACTUALLY prevent bad data from reaching the repository layer of my application?
 
 ### Common Testing Documentation
 - Test Policy
