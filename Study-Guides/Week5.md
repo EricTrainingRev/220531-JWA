@@ -89,6 +89,11 @@ E2E testing is all encompasing: it takes the entirety of your application and va
 - Behavior Testing
     - Testing done to ensure that the logic of your code actual works as intended
         - think testing Service Objects: does my validation method ACTUALLY prevent bad data from reaching the repository layer of my application?
+- User Acceptance Testing
+    - Testing done to ensure that end users are happy with the product (do they like the look, is it intuitive, are the loading screens too long, do they like the flashing lights, is it intuitive to use, etc.)
+        - typically this is done in two phases: alpha and beta testing
+            - alpha testing is done by the developers
+            - beta testing is done by the end users
 
 ### Common Testing Documentation
 - Test Policy

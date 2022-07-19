@@ -170,13 +170,22 @@ Javalin is a lightweight framework that handles creating a web server that our a
       <version>4.6.4</version>
     </dependency>
     <!-- this bundle dependency will give you lots of extra features you can explore when you are comfortable with the base Javalin tools -->
+```
 ```java
 // basic Javalin setup taken from the documentation website
 import io.javalin.Javalin;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        Javalin app = Javalin.create().start(7070); // this makes the app listen on port 7070
+        Javalin app = Javalin.create().start(); // this makes the app listen on port 8080
+
+        /*
+            below is an example of "exposing" the API: we create a way for the end user to be able to interact
+            with the application.
+
+            Anytime the end user accesses the exposed endpoint they are "consuming" it: this is simply a way
+            of describing an end user interacting with our API
+        */
         app.get("/", ctx -> ctx.result("Hello World")); // this tells Javalin to return "hello world" when the base url is sent as an HTTP request
     }
 }
@@ -187,6 +196,7 @@ For your projects you have been shown how to create controller classes that you 
 import io.javalin.http.Handler;
 
 public class ExampleController{
+    // Handler is a functional interface we use to create our lambda that will be called when the route this lambda is assigned to is consumed
     public Handler helloWorld = ctx ->{
         ctx.result("Hello world");
         ctx.status(200);
@@ -208,7 +218,7 @@ public class MainClass{
 }
 ```
 ## Gson
-Gson is a helpful library that can parse JSONs into java objects, and vice versa. It can also be used to handle retrieving information contained in the URL of the HTTP Request
+Gson is a helpful library that can parse JSONs into java objects, and vice versa.
 ```java
 Gson gson = new Gson();
 String jsonContent = gson.body(); // turns the body of an http request into a String object
@@ -274,7 +284,7 @@ public static void setup(){
 
 }
 ```
-5. You can now write your tests for the calculator method we are testing, but instead of having to pass in real values you can use Mockito to determine what goes into the method and what comes out
+5. You can now write your tests for the calculator method we are testing, but instead of having to return real values you can use Mockito to determine what is returned based upon the input
 ```java
 @Test
 public void mockReturnControl(){
@@ -305,7 +315,8 @@ public void isOdd(){
         Mockito.when(mathy.mathematics(9)).thenReturn(4);
         calculator.evenOdd(9);
         // verify will throw an exception if the mock object does not call the method with desired input
-        // this is true mocking: checking that both the correct method and input are used
+        // this is the goal of mocking: checking that both the correct method and input are used. This is called
+        // behavior verification
         Mockito.verify(mathy).mathematics(9);
     }
 
