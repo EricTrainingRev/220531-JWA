@@ -1,0 +1,11 @@
+# Ethical Hacking
+Ethical hacking is a process by which a company agrees to let one or more individuals attack their systems to determine where any weakness in their security are. This is a seperate idea from things like being a hacktivist who will try and break into secure systems for social justice purposes. Ethical Hacking is more of an agreement between parties where the hackers are given permission to try and access systems they technically don't have permission to see. This processes of trying to access information "unethically" with permission is called penetration testing.
+
+# Penetration Testing
+Penetration testing is a process by which one or more individuals try to access information they should not be able to acquire. There are many ways of doing this, and there is an organization that keeps track of the top 10 security concerns that organizations should be aware of/handle.
+
+# SQL Injection
+SQL injection is a process by which a malicious actor can try and manipulate SQL queries to gain access to information that they should not be able to access. This can happen if an application does not "sanitize" user inputs. The idea of sanitizing inputs is just putting in extra checks that the information being recieved from the user is what it is supposed to be, and if not, rejecting the user input.
+
+# Cross Site Scripting
+Cross Site Scripting (XSS) is a process by which malicious actors attempt to use bad code to steal/delete information from legitimate users of a web service. One common way of performing XSS is phising emails: an email that looks legit saying that someone tried to access your data illegally and you need to confirm/reset your information to protect it. Upon clicking the link in your email to confirm your data, you unwittingly send your personal info to the attacker, and upon entering more personal info into the website you are taken to, lose even more of your personal information, such as account access info (username/password), payment information, and potentially more.
