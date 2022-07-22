@@ -127,7 +127,7 @@ Java includes some keywords that are not used to denote access levels: these thr
 
 There are other keywords as well, but we will not make much (if any) use of them:
 - synchronized 
-    - relevant to threads and preventing deadlock phenomena (discussed in a separate module)
+    - relevant to threads and preventing deadlock phenomena
 - transient 
     - marks a variable as non-serializable, meaning it will not be persisted when written to a byte stream
 
