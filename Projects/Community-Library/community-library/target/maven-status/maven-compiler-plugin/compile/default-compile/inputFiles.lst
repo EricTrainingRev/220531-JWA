@@ -1,0 +1,10 @@
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\entities\Book.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\repository\BookDAO.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\service\BookService.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\service\BookServiceInterface.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\Main.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\utils\BusinessRules.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\repository\BookDAOInterface.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\controllers\BookController.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\exceptions\InvalidBook.java
+C:\Users\EricSuminski\Desktop\Community-Library\community-library\src\main\java\com\revature\utils\HibernateUtil.java

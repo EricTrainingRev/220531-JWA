@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.revature.runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.567 s - in com.revature.runner.TestRunner

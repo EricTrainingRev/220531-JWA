@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Community Library</title>
+</head>
+<body>
+    <h1>Welcome to the Community library!</h1>
+    <!-- I have two basic web structures I need: the table to hold the book info, and a book edit section -->
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th><th>Title</th><th>Author</th><th>Checkout</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <!-- body of table will be dynamically generated -->
+        </tbody>
+    </table>
+
+    <select name="ids" id="idSelect"></select>
+    <input type="text" id="titleEdit" placeholder="title edit goes here">
+    <input type="text" id="authorEdit" placeholder="author edit goes here">
+    <button id="confirmButton" onclick="updateBook()">confirm update</button>
+
+</body>
+<script>
+    const tbody = document.getElementById("tbody");
+    const idSelect = document.getElementById("idSelect");
+    const titleEdit = document.getElementById("titleEdit");
+    const authorEdit = document.getElementById("authorEdit");
+
+    const baseURL = "http://localhost:8080/";
+
+    /*
+        TODO
+            get all books
+            delete book
+            update book
+            add book
+    */
+
+   async function getAllBooks(){
+    /*
+        general process
+            1. craft http request
+            2. make the request
+            3. handle the response
+    */
+
+    // because this is a get request I don't need to make a config and pass it into the fetch request
+    let httpResponse = await fetch(`${baseURL}book`);
+    if(httpResponse.status === 200){
+        // this prevents duplicate data from filling the table/select element
+        tbody.innerHTML = "";
+        idSelect.innerHTML = "";
+        /*
+            convert httpResponse body into an array of book objects
+            for each book in array of book objects:
+                create a new row element
+                set innerHTML of the new row element with the information from the book
+                append the row element to the table body
+        */
+        let books = await httpResponse.json();
+        // added this to make E2E tests easier
+        books.sort(function(a,b){return a.id-b.id});
+        for(let book of books){
+            let newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td id="bookId${book.id}">${book.id}</td>
+                <td>${book.title}</td>
+                <td>${book.author}</td>
+                <td><button id="${book.id}" onclick="removeBook(${book.id},'${book.title}','${book.author}')">take book</button></td>
+            `;
+            tbody.appendChild(newRow);
+
+            // once the table row is created we need to add the id of the book to the edit book id select element
+            let idOption = document.createElement("option");
+            idOption.value = book.id;
+            idOption.textContent = book.id;
+            idOption.id = `option${book.id}`;
+            idSelect.appendChild(idOption);
+        }
+        let newRow = document.createElement("tr");
+        newRow.innerHTML = `
+        <td>Create a book here!</td>
+        <td><input type="text" id="newTitle" placeholder="title goes here"></td>
+        <td><input type="text" id="newAuthor" placeholder="author goes here"></td>
+        <td><button id="createButton" onclick="createBook()">add book!</button></td>
+        `;
+        tbody.appendChild(newRow);
+    } else {
+        alert("something went wrong, could not access library books");
+        }
+    }
+
+    async function removeBook(bookId, bookTitle, bookAuthor){
+        /*
+            craft json
+            create config
+            pass config along with http request
+            handle response
+        */
+        let bookObject = {
+            title:bookTitle,
+            author:bookAuthor
+        };
+
+        let bookJSON = JSON.stringify(bookObject);
+
+        let config = {
+            method:"DELETE",
+            headers:{"Content-Type":"application/json"},
+            body: bookJSON
+        };
+
+        let httpResponse = await fetch(`${baseURL}book/${bookId}`, config);
+
+        if(httpResponse.status === 200){
+            alert("You have checked the book out! Enjoy!");
+            getAllBooks();
+        } else {
+            alert("something went wrong! Please try again");
+        }
+
+    }
+
+    async function updateBook(){
+        let bookObject = {
+            title: titleEdit.value,
+            author: authorEdit.value
+        }
+
+        let bookJSON = JSON.stringify(bookObject);
+
+        let config = {
+            method: "PATCH",
+            headers:{"Content-Type":"application/json"},
+            body: bookJSON
+        };
+
+        let httpResponse = await fetch(`${baseURL}book/${idSelect.value}`, config);
+
+        if(httpResponse.status === 200){
+            alert("book was updated successfully!");
+            getAllBooks();
+        } else if (httpResponse.status === 400){
+            let body = await httpResponse.json();
+            alert(body.message);
+        }
+    }
+
+    async function createBook(){
+        let newBookObject = {
+            title: document.getElementById("newTitle").value,
+            author: document.getElementById("newAuthor").value
+        }
+
+        let newBookJSON = JSON.stringify(newBookObject);
+
+        let config = {
+            method: "POST",
+            headers:{"Content-Type":"application/json"},
+            body: newBookJSON
+        };
+
+        let httpResponse = await fetch(`${baseURL}book`,config);
+
+        if(httpResponse.status === 201){
+            alert("thank you for providing the book!")
+            getAllBooks();
+        } else if (httpResponse.status === 400){
+            let body = await httpResponse.json();
+            alert(body.message);
+        } else {
+            alert("something went wrong: please try again");
+        }
+
+
+    }
+
+
+
+    getAllBooks();
+</script>
+</html>
