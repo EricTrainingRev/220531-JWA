@@ -1,0 +1,2 @@
+# What is Github Actions?
+Historically, when using Github as a central repository you would have to use 3rd party software to grab your code from the repo, clone it into a test environment, and then you could run your tests. Github Actions was Github's response to people needing all this extra software. Before, you could only store your information in a Github repo, but now with the many actions you can perform with your repo code, there is a whole new world of possibilities that are still being explored.
