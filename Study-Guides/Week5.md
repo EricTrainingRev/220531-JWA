@@ -94,6 +94,8 @@ E2E testing is all encompasing: it takes the entirety of your application and va
         - typically this is done in two phases: alpha and beta testing
             - alpha testing is done by the developers
             - beta testing is done by the end users
+- Data Driven Testing
+    - Testing that takes data from an outside source (think Excel sheet) and uses it to perform tests. Typically the results would be stored in an outside source as well, such as another Excel sheet
 
 ### Common Testing Documentation
 - Test Policy
