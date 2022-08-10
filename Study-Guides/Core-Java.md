@@ -238,6 +238,26 @@ Key differences between abstract classes and interfaces:
 |concrete methods allowed|abstract methods normally(default/static allowed)|
 |can only inherit one class|can implement multiple interfaces|
 
+```java
+public abstract class MyAbstractStuff{
+    /*
+        abstract classes are very similar to regular classes, but they have two key differences: the first is
+        that they can declare their methods to be abstract, meaning that their implementation will be handled
+        by any class that extends this abstract class
+    */
+
+    public abstract void myAbstractMethod();
+
+    /*
+        the second key difference is that an abstract class can not be instantiated directly: to access the fields
+        and behaviors in the abstract class you need to extend the class with a child class and instantiate the
+        child class
+    */
+
+    // MyAbstractStuff myObject = new MyAbstractStuff() will cause an error in your code
+}
+```
+
 ## Functional Interfaces and Lambdas
 Functional Interfaces are interfaces with a single method that is used to create lambda templates.
 ```java
