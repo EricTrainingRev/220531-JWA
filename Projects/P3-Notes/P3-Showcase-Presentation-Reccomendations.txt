@@ -1,0 +1,54 @@
+Aim for your presentation to be ~30 minutes
+Everyone should speak at least once
+If possible, try to have only one person share their screen
+Have a powerpoint for when you are not showing off your tests/application
+	- make sure the powerpoint is auxilary to your presentation: you should not just be reading off the powerpoint
+Everyone should have their part/s of the presentation written out
+You should practice the presentation 3-5 times if possible
+
+REMEMBER: this showcase is your chance to show off what you have accomplished: focus on the positives of the project, not the negatives
+
+1. Introduction
+	- what is your training track? (Java With Automation Next Gen)
+	- Brief explanation of your Sprint
+	- Who all was on the team
+2. Workflow
+	- what work was assigned for this sprint?
+	- what technologies did you use?
+		- client side technology?
+		- backend technology?
+		- testing technology?
+	- how did you organize your team?
+		- did you use version control?
+3. Part 1: testing
+	- what kind of tests did you do?
+		- was this white box or black box testing?
+		- what were you testing in the repository layer?
+		- what were you testing in the service layer?
+		- how did you test the web server API?
+		- How did you handle your End to End system testing?
+	- what did your tests tell you about the current state of the project?
+		- what was your initial passing percentage?
+		- what was causing your failing tests to fail?
+	- What were some challenges your team faced during this time, and how did you overcome them?
+	- Show off your initial test reports
+4. part 2: refactoring
+	- How did you prioritize your work?
+	- How did your tests help you with your refactoring?
+	- How did you follow Behavior Driven and Test Driven Development practices?
+	- What work did you accomplish?
+	- What were some challenges your team faced during this time, and how did you overcome them?
+	- Demonstrate your tests running to show how your tests confirm your development work was done correctly
+		- if any tests fail be preppared to explain what is wrong and how you would fix the failing test next sprint
+5. Demonstration of Application
+	- Show off the work you accomplished on the application
+		- make sure to focus on the parts that work
+		- don't worry if something is not complete: that is a feature/user story that will be handled next sprint
+	- Explain how the current state of the application is different from when the sprint first started
+6. Retrospective
+	- What did the team accomplish this Sprint?
+	- What did the team learn?
+		- were new skills developed?
+		- were new technologies learned?
+	- What would the team focus on doing next Sprint, if you were to be assigned to this project again?
+	- Make sure to thank everyone for coming and take questions!
