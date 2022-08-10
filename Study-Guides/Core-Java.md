@@ -47,6 +47,12 @@ public class myClass {
     - the jre contains the runtime libraries necessary for a java app to run, and it houses the jvm too
 - JDK
     - the jdk contains developer tools (compiler, debuger, documentation tools, etc.) that allow for the creation of java apps
+
+## stack & heap
+- the heap is where objects are stored in memory (and the string pool)
+- the stack is where local variables references are stored
+    - a new stack is created for each method invocation
+
 ## pillars of oop
 - Abstraction
     - you don't need to know why code works to be able to use it
@@ -255,6 +261,19 @@ public abstract class MyAbstractStuff{
     */
 
     // MyAbstractStuff myObject = new MyAbstractStuff() will cause an error in your code
+
+    /*
+        Other than the two points above, you can treat an abstract class like a regular class: fields can be class
+        or object scope, methods can have implementations, and you can utilize access modifiers like regular.
+    */
+}
+```
+
+```java
+public interface MyInterfaceStuff{
+    boolean myBoolean = true; // this is public static final by default
+
+    void someMethod(); // this is public abstract by default
 }
 ```
 
